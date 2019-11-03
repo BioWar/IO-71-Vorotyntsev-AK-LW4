@@ -9,12 +9,14 @@
 Instructions for CMake files can be found [here]( https://mirkokiefer.com/cmake-by-example-f95eb47d45b1 ).
 <br>
 ## Commands for assembly
-1. Make: 
+1. Make: <br>
 `$ make -f Makefile_Ultimate_Gold_AnyPercent_Antology_Full_Edition`
-2. CMake:
+2. CMake:<br>
 `$ cmake ~/IO-71-Vorotyntsev-AK-LW4`
-3. Ninja:
+3. Ninja:<br>
 `$ cd ~/IO-71-Vorotyntsev-AK-LW4 && mkdir build && cd build`
+<br>
 `$ cmake -GNinja ..`
+<br>
 `$ ninja`
     
