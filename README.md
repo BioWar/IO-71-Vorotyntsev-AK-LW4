@@ -14,9 +14,9 @@ Instructions for CMake files can be found [here]( https://mirkokiefer.com/cmake-
 2. CMake:<br>
 `$ cmake ~/IO-71-Vorotyntsev-AK-LW4`
 3. Ninja:<br>
-`$ cd ~/IO-71-Vorotyntsev-AK-LW4 && mkdir build && cd build`
-<br>
-`$ cmake -GNinja ..`
-<br>
+`$ cd ~/IO-71-Vorotyntsev-AK-LW4 && mkdir build && cd build`<br>
+
+`$ cmake -GNinja ..`<br>
+
 `$ ninja`
     
