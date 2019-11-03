@@ -1,6 +1,6 @@
 # AK Laboratory Work 4
 ### Vorotyntsev Petro IO-71
- ![](https://img.shields.io/github/release/BioWar/IO-71-Vorotyntsev-AK-LW4)
+ [![MIT License](https://img.shields.io/pypi/l/aiogram.svg?style=flat-square)](https://opensource.org/licenses/MIT)
  <br>
 \*.ninja files were generated automatically.
 <br>
