@@ -1,19 +1,41 @@
-CC = g++
-CFLAGS=-c -Wall
+BIN_NAME = hello
+OBJFILES = main.o factorial.o hello.o
+CMAKEFILES = CMakeCache.txt cmake_install.cmake Makefile
+CMAKEDIR = CMakeFiles
+CXX = g++
+DEPS = functions.h
 
-all: hello
+CXXFLAGS = -c -Wall
 
-hello: main.o factorial.o hello.o
-	$(CC) main.o factorial.o hello.o -o hello
+SRC_EXT = cpp
+SRC_PATH = .
+LIBS =
+SHELL = /bin/bash
+
+export CMD_PREFIX := @
+
+all: $(BIN_NAME) $(DEPS)
+	@echo "Making symlink: $(BIN_NAME) -> $<"
+
+$(BIN_NAME): $(OBJFILES)
+	$(CXX) $(OBJFILES) -o $(BIN_NAME)
 
 main.o: main.cpp
-	$(CC) $(CFLAGS) main.cpp
+	$(CXX) $(CXXFLAGS) main.cpp
 
 factorial.o: factorial.cpp
-	$(CC) $(CFLAGS) factorial.cpp
+	$(CXX) $(CXXFLAGS) factorial.cpp
 
 hello.o: hello.cpp
-	$(CC) $(CFLAGS) hello.cpp
+	$(CXX) $(CXXFLAGS) hello.cpp
 
 clean:
-	rm -rf *.o hello
+	@echo "Deleting $(BIN_NAME) $(OBJFILES) symlink"
+	@$(RM) $(BIN_NAME)
+	@$(RM) $(OBJFILES)
+	@echo "Deleting directories"
+	@$(RM) -r build
+	@$(RM) -r bin
+	@echo "Deleting CMake $(CMAKEFILES) $(CMAKEDIR)"
+	@$(RM) $(CMAKEFILES)
+	@$(RM) -r $(CMAKEDIR)
