@@ -3,7 +3,7 @@ OBJFILES = main.o factorial.o hello.o
 CMAKEFILES = CMakeCache.txt cmake_install.cmake Makefile
 CMAKEDIR = CMakeFiles
 CXX = g++
-DEPS = functions.h
+DEPS = functions.a
 
 CXXFLAGS = -c -Wall
 
@@ -29,10 +29,14 @@ factorial.o: factorial.cpp
 hello.o: hello.cpp
 	$(CXX) $(CXXFLAGS) hello.cpp
 
+$(DEPS): $(OBJFILES)
+	ar rcs $(DEPS) $(OBJFILES)
+
 clean:
-	@echo "Deleting $(BIN_NAME) $(OBJFILES) symlink"
+	@echo "Deleting $(BIN_NAME) $(OBJFILES) $(DEPS) symlink"
 	@$(RM) $(BIN_NAME)
 	@$(RM) $(OBJFILES)
+	@$(RM) $(DEPS)
 	@echo "Deleting directories"
 	@$(RM) -r build
 	@$(RM) -r bin
